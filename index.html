@@ -1,13 +1,60 @@
-
-<div class="header">
-    <a href="#default" class="logo">11011110000 <br />(1776 in meatbag)</a>
-    <div class="header-right">
-        <a class="active" href="http://www.michelbr.ink">Live Free</a>
-        <a href="http://google.com">Die</a>
-    </div>
-</div>
+<body>
+        <div class="header" font-family="PressStart2P" >
+            <a style="font-size:28px;" href="#default" > <strong>11011110000</strong><br />
+                <span style="font-size:15px;" >
+                (1776 in meatbag)</span>
+            </a>
+            <div class="header-right">
+                <a class="blink" onclick="playSound(this, 'anthem.mp3');">Insert Coin</a>
+            </div>
+        </div>
+</body>
+<style type "text/css">
+    <!--
+    /* @group Blink */
+    .blink {
+        -webkit-animation: blink .75s linear infinite;
+        -moz-animation: blink .75s linear infinite;
+        -ms-animation: blink .75s linear infinite;
+        -o-animation: blink .75s linear infinite;
+         animation: blink .75s linear infinite;
+    }
+    @-webkit-keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 1; }
+        50.01% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+    @-moz-keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 1; }
+        50.01% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+    @-ms-keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 1; }
+        50.01% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+    @-o-keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 1; }
+        50.01% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+    @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 1; }
+        50.01% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+    /* @end */
+    -->
+    </style>
 <style>
     body {
+        font-family: PressStart2P !important;
         background: url(8bitCrossing.png);
         background-size: 100% auto;
     }
@@ -81,4 +128,27 @@
             float: none;
         }
     }
+
+    @font-face {
+  font-family: 'PressStart2P';
+  src: url('PressStart2P.eot'); /* IE9 Compat Modes */
+  src: url('PressStart2P.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('PressStart2P.woff') format('woff'), /* Modern Browsers */
+       url('PressStart2P.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('PressStart2P.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
 </style>
+ <script type="text/javascript">
+    function playSound(el,soundfile) {
+        var embed = document.getElementById("embed");
+        if (!embed) {
+            var embed = document.createElement("embed");
+                embed.id= "embed";
+                embed.setAttribute("src", soundfile);
+                embed.setAttribute("hidden", "true");
+            el.appendChild(embed);
+        } else {
+            embed.parentNode.removeChild(embed);
+        }
+    }
+</script>
